@@ -235,7 +235,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         child: Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(index2 == 0 ? 15 : 4),
+                              topRight: Radius.circular(index2 == 0 ? 15 : 4),
+                              bottomLeft: Radius.circular(index2 ==  matches.length -1 ? 15 : 4),
+                              bottomRight: Radius.circular(index2 ==  matches.length -1 ? 15 : 4),
+                            ),
                             color: Color(0xFF353535),
                           ),
                           child: Row(
@@ -257,7 +262,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(height: 4,),
+                                    SizedBox(height: 8,),
                                     Row(
                                       children: [
                                         Image.asset(
@@ -280,8 +285,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                   bottom: 4,
                                 ),
                                 child: Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 8,vertical: 4),
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(15),
                                     color: matches[index2]['isLive']
                                         ? Colors.red
                                         : Color(0xFF3D3D3D),
